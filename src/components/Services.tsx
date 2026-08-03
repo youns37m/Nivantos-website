@@ -1,8 +1,12 @@
 import { motion } from "framer-motion"
 import type { MouseEvent } from "react"
 import {
-  Bot, BarChart3, MessageSquare, Eye, ShieldCheck, GraduationCap,
-  ArrowUpRight, type LucideIcon,
+  MessageSquare,
+  TrendingUp,
+  FileText,
+  Bot,
+  ArrowUpRight,
+  type LucideIcon,
 } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
@@ -17,12 +21,34 @@ type Service = {
 }
 
 const services: Service[] = [
-  { number: "01", icon: Bot, title: "Agents IA sur mesure", description: "Assistants intelligents entraînés sur vos données pour automatiser vos workflows et multiplier la productivité.", tags: ["LLM", "RAG", "Automation"] },
-  { number: "02", icon: BarChart3, title: "Analyse prédictive", description: "Modèles ML pour anticiper les tendances, optimiser vos décisions et maximiser votre performance commerciale.", tags: ["ML", "Forecasting", "BI"] },
-  { number: "03", icon: MessageSquare, title: "Chatbots & NLP", description: "Interfaces conversationnelles naturelles, multilingues et disponibles 24h/24 pour transformer votre relation client.", tags: ["NLP", "Support", "Multilingue"] },
-  { number: "04", icon: Eye, title: "Vision par ordinateur", description: "Reconnaissance d'images, détection d'anomalies et analyse vidéo en temps réel pour vos contrôles qualité.", tags: ["CV", "Qualité", "Temps réel"] },
-  { number: "05", icon: ShieldCheck, title: "Audit & Conformité IA", description: "Évaluation de vos systèmes, conformité RGPD et gouvernance responsable pour une IA éthique et sécurisée.", tags: ["RGPD", "Éthique", "Audit"] },
-  { number: "06", icon: GraduationCap, title: "Formation & Accompagnement", description: "Montée en compétences de vos équipes et intégration de l'IA dans votre culture d'entreprise.", tags: ["Workshops", "Change", "Support"] },
+  {
+    number: "01",
+    icon: MessageSquare,
+    title: "Agent IA Service Client",
+    description: "Répond automatiquement aux clients 24h/24. Gère les questions fréquentes, oriente les demandes et améliore la satisfaction sans embaucher.",
+    tags: ["Support", "24h/24", "Multicanal"],
+  },
+  {
+    number: "02",
+    icon: TrendingUp,
+    title: "Agent IA Commercial",
+    description: "Qualifie les prospects, relance automatiquement et augmente les ventes. Votre pipeline avance même quand vous êtes sur le terrain.",
+    tags: ["Prospection", "Relances", "Conversion"],
+  },
+  {
+    number: "03",
+    icon: FileText,
+    title: "Agent IA Administratif",
+    description: "Automatise les emails, devis, factures et tâches répétitives. Libérez des heures chaque semaine pour vous concentrer sur l'essentiel.",
+    tags: ["Emails", "Devis", "Facturation"],
+  },
+  {
+    number: "04",
+    icon: Bot,
+    title: "Agent IA Sur Mesure",
+    description: "Développement d'un agent IA adapté aux besoins spécifiques de votre entreprise. Intégré à vos outils, formé sur vos processus.",
+    tags: ["Sur mesure", "Intégration", "Évolutif"],
+  },
 ]
 
 function handleMouseMove(e: MouseEvent<HTMLElement>) {
@@ -41,12 +67,12 @@ export default function Services() {
         <MotionReveal variant="blur">
           <SectionHeading
             label="Nos services"
-            title={<>Des solutions IA <span className="gradient-text">haut de gamme</span></>}
-            description="De la stratégie à la mise en production, nous concevons des systèmes d'intelligence artificielle qui génèrent un impact mesurable."
+            title={<>Des agents IA <span className="gradient-text">sur mesure</span></>}
+            description="Quatre solutions conçues pour les PME et TPE qui veulent automatiser sans complexité ni investissement disproportionné."
           />
         </MotionReveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
           {services.map((service, i) => {
             const Icon = service.icon
             return (

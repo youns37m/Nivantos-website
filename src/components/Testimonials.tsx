@@ -12,24 +12,24 @@ const avatarColors = [
 
 const testimonials = [
   {
-    quote: "Nivantos a transformé notre service client en 6 semaines. Notre chatbot IA traite 70 % des demandes automatiquement, avec une satisfaction client en hausse de 35 %.",
-    name: "Sophie Martin",
-    role: "Directrice Digital",
-    company: "TechCorp",
+    quote: "Notre agent service client répond aux demandes en dehors des horaires de bureau. On a réduit le temps passé au téléphone de moitié, sans embaucher.",
+    name: "Marie L.",
+    role: "Gérante",
+    company: "Cabinet comptable · Lyon",
     rating: 5,
   },
   {
-    quote: "L'équipe a su comprendre nos enjeux métier dès le premier échange. Le ROI a été visible dès le 3e mois — un investissement que je referais sans hésiter.",
-    name: "Thomas Dubois",
-    role: "CEO",
-    company: "DataFlow",
+    quote: "L'agent commercial relance nos prospects automatiquement. On a signé 3 contrats supplémentaires le premier mois, juste grâce aux relances qu'on n'avait plus le temps de faire.",
+    name: "Julien M.",
+    role: "Directeur",
+    company: "Agence immobilière · Bordeaux",
     rating: 5,
   },
   {
-    quote: "Un accompagnement premium du début à la fin. Architecture solide, formation de nos équipes, et un support réactif. Nivantos est notre partenaire IA de référence.",
-    name: "Camille Renard",
-    role: "CTO",
-    company: "InnovateLab",
+    quote: "Les devis et emails récurrents sont gérés par l'agent administratif. Je récupère facilement 2 demi-journées par semaine pour me concentrer sur mes clients.",
+    name: "Sophie R.",
+    role: "Fondatrice",
+    company: "Boutique en ligne · Nantes",
     rating: 5,
   },
 ]
@@ -45,7 +45,7 @@ export default function Testimonials() {
           <SectionHeading
             label="Témoignages"
             title={<>Ce que disent <span className="gradient-text">nos clients</span></>}
-            description="Des entreprises ambitieuses nous font confiance pour propulser leur transformation IA."
+            description="Des dirigeants de PME et TPE qui ont automatisé leur quotidien avec Nivantos."
           />
         </MotionReveal>
 

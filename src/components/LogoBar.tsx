@@ -1,18 +1,24 @@
 import { motion } from "framer-motion"
 
-const logos = [
-  "TechCorp", "DataFlow", "InnovateLab", "SmartBiz", "FutureScale",
-  "NeuralWorks", "CloudMind", "DeepLogic",
+const sectors = [
+  "Commerces",
+  "Artisans",
+  "Professions libérales",
+  "Agences",
+  "E-commerce",
+  "Services B2B",
+  "Restauration",
+  "Santé & bien-être",
 ]
 
 export default function LogoBar() {
-  const doubled = [...logos, ...logos]
+  const doubled = [...sectors, ...sectors]
 
   return (
     <section className="relative border-y border-white/[0.05] bg-white/[0.01] py-8 backdrop-blur-sm sm:py-10">
       <div className="mx-auto mb-5 max-w-7xl px-5 text-center sm:px-6">
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-zinc-600 sm:text-xs">
-          Ils nous font confiance
+          Nous accompagnons tous les secteurs
         </p>
       </div>
 

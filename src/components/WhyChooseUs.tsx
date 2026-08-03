@@ -1,7 +1,7 @@
 import {
-  Star,
+  Building2,
   Settings2,
-  TrendingUp,
+  Clock,
   Headphones,
   type LucideIcon,
 } from "lucide-react"
@@ -18,36 +18,36 @@ type Advantage = {
 
 const advantages: Advantage[] = [
   {
-    icon: Star,
-    title: "Expertise de pointe",
+    icon: Building2,
+    title: "Spécialiste PME & TPE",
     description:
-      "Une équipe senior certifiée sur les dernières architectures IA — GPT, Claude, Llama et modèles propriétaires.",
-    stat: "8+ ans",
-    statLabel: "d'expertise IA",
+      "Nous comprenons vos contraintes de temps, de budget et d'équipe. Nos agents IA sont pensés pour des structures agiles, pas pour des multinationales.",
+    stat: "100%",
+    statLabel: "adapté aux PME",
   },
   {
     icon: Settings2,
-    title: "100% sur mesure",
+    title: "Agents 100% sur mesure",
     description:
-      "Chaque solution est conçue spécifiquement pour vos enjeux métier. Zéro template, zéro compromis.",
+      "Chaque agent est configuré selon votre métier, vos outils et votre ton de communication. Pas de solution générique copiée-collée.",
     stat: "0",
-    statLabel: "solution générique",
+    statLabel: "template imposé",
   },
   {
-    icon: TrendingUp,
-    title: "ROI mesurable",
+    icon: Clock,
+    title: "Gain de temps immédiat",
     description:
-      "Des KPIs définis dès le départ. Nous garantissons un retour sur investissement quantifiable à chaque étape.",
-    stat: "×4",
-    statLabel: "ROI moyen",
+      "Emails, relances, prises de rendez-vous, réponses clients — vos agents traitent le répétitif pendant que vous développez votre activité.",
+    stat: "−70%",
+    statLabel: "de tâches admin",
   },
   {
     icon: Headphones,
-    title: "Accompagnement premium",
+    title: "Accompagnement humain",
     description:
-      "Un chef de projet dédié, des points hebdomadaires et un support réactif tout au long de la collaboration.",
-    stat: "24h",
-    statLabel: "délai de réponse",
+      "Un interlocuteur dédié vous guide de l'audit à la mise en service. Formation incluse pour que vos équipes restent maîtres de leurs outils.",
+    stat: "48h",
+    statLabel: "premier échange",
   },
 ]
 
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
                 <span className="gradient-text">Nivantos</span> ?
               </>
             }
-            description="Nivantos combine expertise technique, vision stratégique et exécution rigoureuse pour automatiser vos processus et accélérer votre croissance."
+            description="Nivantos place l'intelligence artificielle au service des entrepreneurs et dirigeants de PME qui veulent gagner du temps sans sacrifier la qualité."
           />
         </MotionReveal>
 

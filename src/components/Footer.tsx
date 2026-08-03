@@ -51,10 +51,10 @@ export default function Footer() {
 
             <div className="relative flex flex-col items-center gap-6 px-6 py-14 text-center sm:px-10 sm:py-16">
               <h2 className="font-display max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Prêt à transformer votre entreprise ?
+                Libérez du temps pour votre entreprise
               </h2>
               <p className="max-w-md text-base text-zinc-400">
-                Discutons de votre projet IA lors d&apos;un appel découverte gratuit de 30 minutes.
+                Découvrez comment un agent IA Nivantos peut automatiser vos tâches répétitives dès les premières semaines.
               </p>
               <a
                 href="#contact"
@@ -62,7 +62,7 @@ export default function Footer() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 transition-all duration-500 group-hover:from-violet-500 group-hover:to-purple-500" />
                 <span className="absolute inset-0 opacity-0 blur-xl bg-violet-500 transition-opacity duration-500 group-hover:opacity-50" />
-                <span className="relative">Démarrer votre projet</span>
+                <span className="relative">Demander un audit gratuit</span>
                 <ArrowRight size={16} className="relative transition-transform duration-500 group-hover:translate-x-1" />
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <Logo className="mb-5" />
               <p className="mb-6 max-w-xs text-sm leading-relaxed text-zinc-400">
-                L&apos;intelligence artificielle au service de votre croissance. Solutions IA sur mesure pour entreprises ambitieuses.
+                L&apos;IA qui travaille pendant que vous développez votre entreprise. Agents IA sur mesure pour PME et TPE.
               </p>
               <div className="flex max-w-xs items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] p-1.5 pl-4">
                 <Mail size={15} className="shrink-0 text-zinc-500" />

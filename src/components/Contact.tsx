@@ -37,11 +37,11 @@ export default function Contact() {
             label="Contact"
             title={
               <>
-                Prêt à{" "}
-                <span className="gradient-text">innover</span> ?
+                Lancez votre{" "}
+                <span className="gradient-text">agent IA</span>
               </>
             }
-            description="Réservez un appel découverte gratuit de 30 minutes. Nous analyserons vos besoins et vous proposerons une feuille de route personnalisée."
+            description="Réservez un audit gratuit de 30 minutes. Nous identifions les tâches à automatiser et vous proposons l'agent adapté à votre activité."
           />
         </MotionReveal>
 
@@ -154,10 +154,10 @@ export default function Contact() {
                       </label>
                       <select id="budget" className={inputClass}>
                         <option value="" className="bg-zinc-900">Sélectionnez une fourchette</option>
-                        <option value="15-30k" className="bg-zinc-900">15 000 – 30 000 €</option>
-                        <option value="30-60k" className="bg-zinc-900">30 000 – 60 000 €</option>
-                        <option value="60-100k" className="bg-zinc-900">60 000 – 100 000 €</option>
-                        <option value="100k+" className="bg-zinc-900">100 000 € +</option>
+                        <option value="500-1000" className="bg-zinc-900">500 – 1 000 €/mois</option>
+                        <option value="1000-2000" className="bg-zinc-900">1 000 – 2 000 €/mois</option>
+                        <option value="setup" className="bg-zinc-900">Forfait mise en place (3 000 €+)</option>
+                        <option value="custom" className="bg-zinc-900">Sur mesure — à définir</option>
                       </select>
                     </div>
                     <div>
@@ -168,12 +168,12 @@ export default function Contact() {
                         id="message"
                         required
                         rows={4}
-                        placeholder="Quels sont vos objectifs, défis et contraintes ?"
+                        placeholder="Quelles tâches souhaitez-vous automatiser ? (emails, relances, RDV, support client…)"
                         className={`${inputClass} resize-none`}
                       />
                     </div>
                     <Button type="submit" variant="primary" className="btn-premium-block w-full">
-                      Prendre un rendez-vous
+                      Demander un audit gratuit
                     </Button>
                     <p className="text-center text-xs text-zinc-600">
                       Réponse garantie sous 24h · Appel découverte gratuit · Sans engagement

@@ -1,32 +1,32 @@
 import { motion } from "framer-motion"
-import { TrendingUp, Users, Clock, Award } from "lucide-react"
+import { Clock, Bot, Zap, Building2 } from "lucide-react"
 import MotionReveal from "./ui/MotionReveal"
 import { premiumTransition } from "../lib/motion"
 
 const stats = [
   {
-    icon: Award,
-    value: "98%",
-    label: "Satisfaction client",
-    detail: "Taux de recommandation",
-  },
-  {
-    icon: TrendingUp,
-    value: "120+",
-    label: "Projets livrés",
-    detail: "Depuis 2018",
-  },
-  {
     icon: Clock,
     value: "24/7",
-    label: "Support dédié",
-    detail: "Réponse sous 24h",
+    label: "Agents disponibles",
+    detail: "Sans interruption, sans congés",
   },
   {
-    icon: Users,
-    value: "×4",
-    label: "ROI moyen",
-    detail: "Retour constaté",
+    icon: Bot,
+    value: "4",
+    label: "Agents spécialisés",
+    detail: "Client, commercial, admin, sur mesure",
+  },
+  {
+    icon: Zap,
+    value: "−70%",
+    label: "Tâches répétitives",
+    detail: "Temps administratif économisé",
+  },
+  {
+    icon: Building2,
+    value: "PME",
+    label: "& TPE",
+    detail: "Notre cœur de métier",
   },
 ]
 

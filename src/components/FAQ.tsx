@@ -5,12 +5,30 @@ import MotionReveal from "./ui/MotionReveal"
 import { premiumTransition } from "../lib/motion"
 
 const faqs = [
-  { question: "Combien coûte un projet IA avec Nivantos ?", answer: "Chaque projet est unique. Nos missions démarrent à partir de 15 000 € pour un POC, et peuvent aller au-delà de 100 000 € pour des systèmes complexes. Nous proposons toujours un devis détaillé après un audit gratuit." },
-  { question: "Quel est le délai moyen de livraison ?", answer: "Un proof of concept est livrable en 3 à 4 semaines. Un projet complet prend généralement entre 2 et 4 mois, selon la complexité et le périmètre fonctionnel." },
-  { question: "Travaillez-vous avec des PME ?", answer: "Nous accompagnons des entreprises de toutes tailles — de la scale-up ambitieuse au grand groupe. Notre approche modulaire s'adapte à votre budget." },
-  { question: "Mes données sont-elles sécurisées ?", answer: "Absolument. Chiffrement des données, hébergement souverain possible, conformité RGPD et audits de sécurité réguliers. Vos données ne sont jamais utilisées pour entraîner des modèles tiers." },
-  { question: "Proposez-vous un accompagnement post-lancement ?", answer: "Oui, c'est inclus dans notre offre premium : monitoring continu, mises à jour des modèles, support réactif et évolutions fonctionnelles." },
-  { question: "Quelles technologies utilisez-vous ?", answer: "OpenAI, Anthropic, Mistral, LangChain, PyTorch, TensorFlow, AWS, GCP, Azure. Nous sélectionnons la stack optimale pour chaque cas d'usage." },
+  {
+    question: "Combien coûte un agent IA avec Nivantos ?",
+    answer: "Le tarif dépend du type d'agent et de son périmètre. Comptez entre 500 € et 2 000 €/mois pour un agent standard, ou un forfait de mise en place à partir de 3 000 €. Nous établissons un devis transparent après un audit gratuit de 30 minutes.",
+  },
+  {
+    question: "En combien de temps mon agent est-il opérationnel ?",
+    answer: "Un agent service client ou administratif peut être déployé en 2 à 4 semaines. Un agent sur mesure avec intégrations complexes demande 4 à 6 semaines. Nous vous communiquons un calendrier précis dès l'audit.",
+  },
+  {
+    question: "Est-ce adapté à ma TPE ou ma PME ?",
+    answer: "C'est notre spécialité. Nivantos accompagne des commerces, artisans, professions libérales, agences et PME de services. Nos agents s'adaptent à votre taille, votre budget et vos outils existants.",
+  },
+  {
+    question: "L'agent remplace-t-il mes employés ?",
+    answer: "Non. L'agent IA prend en charge les tâches répétitives et chronophages pour libérer votre équipe sur le relationnel, la vente et la prise de décision. C'est un assistant, pas un substitut.",
+  },
+  {
+    question: "Mes données clients sont-elles protégées ?",
+    answer: "Oui. Hébergement en Europe, conformité RGPD, chiffrement des échanges et aucune utilisation de vos données pour entraîner des modèles tiers. Vous restez propriétaire de vos informations.",
+  },
+  {
+    question: "Puis-je modifier ou faire évoluer mon agent ?",
+    answer: "Absolument. Votre agent évolue avec votre activité : nouveaux scénarios, intégrations supplémentaires, ajustements du ton. Un suivi mensuel est inclus dans nos formules.",
+  },
 ]
 
 export default function FAQ() {
@@ -33,7 +51,7 @@ export default function FAQ() {
                 <span className="gradient-text">fréquentes</span>
               </h2>
               <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">
-                Tout ce que vous devez savoir avant de démarrer votre projet IA avec Nivantos.
+                Tout ce que vous devez savoir avant de déployer votre premier agent IA avec Nivantos.
               </p>
               <a
                 href="#contact"

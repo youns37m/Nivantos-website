@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Search, Compass, Code2, Rocket } from "lucide-react"
+import { Search, PenTool, Plug, Rocket } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
 import { premiumTransition } from "../lib/motion"
@@ -8,29 +8,29 @@ const steps = [
   {
     number: "01",
     icon: Search,
-    title: "Découverte & Audit",
-    description: "Analyse de vos processus, identification des opportunités IA et définition d'objectifs mesurables.",
+    title: "Audit & Diagnostic",
+    description: "Nous identifions les tâches répétitives, les points de friction et les gains rapides possibles dans votre activité.",
     duration: "Semaine 1",
   },
   {
     number: "02",
-    icon: Compass,
-    title: "Stratégie & Conception",
-    description: "Architecture technique, choix des modèles, prototypage rapide et validation avec vos équipes.",
-    duration: "Semaines 2–3",
+    icon: PenTool,
+    title: "Conception de l'agent",
+    description: "Définition du périmètre, du ton, des scénarios et des intégrations avec vos outils existants (CRM, email, agenda…).",
+    duration: "Semaine 2",
   },
   {
     number: "03",
-    icon: Code2,
-    title: "Développement",
-    description: "Construction itérative, intégration à vos systèmes et tests rigoureux en conditions réelles.",
-    duration: "Semaines 4–8",
+    icon: Plug,
+    title: "Intégration & Tests",
+    description: "Développement de l'agent, connexion à vos systèmes et validation en conditions réelles avec votre équipe.",
+    duration: "Semaines 3–4",
   },
   {
     number: "04",
     icon: Rocket,
-    title: "Déploiement & Suivi",
-    description: "Mise en production, formation, monitoring continu et optimisation des performances.",
+    title: "Mise en service & Suivi",
+    description: "Déploiement, formation de vos collaborateurs et ajustements continus pour maximiser les résultats.",
     duration: "Continu",
   },
 ]
@@ -45,8 +45,8 @@ export default function Process() {
         <MotionReveal variant="blur">
           <SectionHeading
             label="Notre méthode"
-            title={<>Une collaboration <span className="gradient-text">transparente</span></>}
-            description="4 étapes structurées pour garantir le succès de votre projet IA, du premier échange à la mise en production."
+            title={<>De l&apos;audit à l&apos;agent <span className="gradient-text">opérationnel</span></>}
+            description="Un processus clair en 4 étapes pour déployer votre agent IA sans perturber votre activité quotidienne."
           />
         </MotionReveal>
 
