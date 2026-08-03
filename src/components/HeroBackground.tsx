@@ -33,6 +33,44 @@ export default function HeroBackground() {
       <div className="absolute inset-0 grid-bg opacity-80" />
       <div className="hero-depth-vignette absolute inset-0" />
 
+      {/* Luminous sphere — hero focal point */}
+      <motion.div
+        className="absolute rounded-full"
+        style={{
+          right: "5%",
+          top: "15%",
+          width: 420,
+          height: 420,
+          background:
+            "radial-gradient(circle at 35% 35%, rgba(224,195,252,0.35) 0%, rgba(124,58,237,0.25) 30%, rgba(76,29,149,0.08) 55%, transparent 70%)",
+          filter: "blur(2px)",
+        }}
+        animate={
+          reduced
+            ? undefined
+            : {
+                scale: [1, 1.08, 1],
+                opacity: [0.7, 1, 0.7],
+                x: [0, -15, 0],
+                y: [0, 10, 0],
+              }
+        }
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute rounded-full"
+        style={{
+          right: "12%",
+          top: "22%",
+          width: 200,
+          height: 200,
+          background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%)",
+          filter: "blur(20px)",
+        }}
+        animate={reduced ? undefined : { opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       {/* Animated light beams */}
       <motion.div
         className="absolute left-[15%] top-0 h-[65%] w-[2px] opacity-40"

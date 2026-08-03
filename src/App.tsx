@@ -1,5 +1,7 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import LogoBar from "./components/LogoBar"
+import Stats from "./components/Stats"
 import Services from "./components/Services"
 import WhyChooseUs from "./components/WhyChooseUs"
 import Process from "./components/Process"
@@ -14,6 +16,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <LogoBar />
+        <Stats />
         <Services />
         <WhyChooseUs />
         <Process />
