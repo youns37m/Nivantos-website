@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import Button from "./ui/Button"
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Avantages", href: "#avantages" },
-  { label: "Processus", href: "#processus" },
+  { label: "Méthode", href: "#processus" },
+  { label: "Témoignages", href: "#temoignages" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ]
@@ -26,69 +28,62 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "border-b border-white/5 bg-black/70 backdrop-blur-2xl shadow-2xl shadow-black/40"
+            ? "border-b border-white/[0.06] bg-black/75 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             : "bg-transparent"
         }`}
+        style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#" className="group flex items-center gap-3">
             <div className="relative flex h-9 w-9 items-center justify-center">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 opacity-80 transition-opacity group-hover:opacity-100" />
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-400 to-fuchsia-500 opacity-0 blur-md transition-opacity group-hover:opacity-60" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]" />
               <span className="relative text-sm font-bold text-white">N</span>
             </div>
-            <span
-              className="text-xl font-bold tracking-tight text-white"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
+            <span className="font-display text-xl font-bold tracking-tight text-white">
               Nexus<span className="gradient-text">AI</span>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-0.5 lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white"
+                className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-all duration-500 hover:bg-white/[0.05] hover:text-white"
+                style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href="#contact"
-              className="group relative overflow-hidden rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 transition-all duration-300 group-hover:from-violet-500 group-hover:to-purple-500" />
-              <span className="absolute inset-0 rounded-full opacity-0 blur-xl bg-violet-500 transition-opacity duration-300 group-hover:opacity-40" />
-              <span className="relative">Prendre un rendez-vous</span>
-            </a>
+          <div className="hidden lg:flex">
+            <Button href="#contact" variant="ghost">
+              Prendre un rendez-vous
+            </Button>
           </div>
 
           <button
             type="button"
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 lg:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] transition-all duration-500 hover:border-violet-500/30 hover:bg-white/[0.08] lg:hidden"
           >
             <div className="flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-white transition-all duration-500 ${
                   menuOpen ? "translate-y-2 rotate-45" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
-                  menuOpen ? "opacity-0" : ""
+                className={`block h-0.5 w-5 bg-white transition-all duration-500 ${
+                  menuOpen ? "opacity-0 scale-0" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-white transition-all duration-500 ${
                   menuOpen ? "-translate-y-2 -rotate-45" : ""
                 }`}
               />
@@ -97,37 +92,35 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-700 lg:hidden ${
           menuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
+        style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
       >
-        <div className="absolute inset-0 bg-black/90 backdrop-blur-2xl" />
-        <nav className="relative flex flex-col items-center gap-2">
+        <div className="absolute inset-0 bg-black/92 backdrop-blur-2xl" />
+        <nav className="relative flex flex-col items-center gap-1">
           {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="px-8 py-3 text-2xl font-semibold text-zinc-300 transition-colors hover:text-white"
+              className="px-8 py-3.5 text-2xl font-semibold text-zinc-300 transition-all duration-500 hover:text-white"
               style={{
                 fontFamily: "var(--font-display)",
-                transitionDelay: menuOpen ? `${i * 60}ms` : "0ms",
+                transitionDelay: menuOpen ? `${i * 50}ms` : "0ms",
               }}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="mt-6 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-8 py-4 text-base font-semibold text-white"
-          >
-            Prendre un rendez-vous
-          </a>
+          <div className="mt-8" onClick={() => setMenuOpen(false)}>
+            <Button href="#contact" variant="primary" icon>
+              Prendre un rendez-vous
+            </Button>
+          </div>
         </nav>
       </div>
     </>

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 
-export function useScrollReveal(threshold = 0.12) {
+export type RevealVariant = "up" | "down" | "left" | "right" | "scale" | "blur"
+
+export function useScrollReveal(threshold = 0.1, rootMargin = "0px 0px -8% 0px") {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -15,12 +17,12 @@ export function useScrollReveal(threshold = 0.12) {
           observer.unobserve(el)
         }
       },
-      { threshold },
+      { threshold, rootMargin },
     )
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [threshold])
+  }, [threshold, rootMargin])
 
   return { ref, visible }
 }
