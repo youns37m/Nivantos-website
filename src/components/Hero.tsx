@@ -82,8 +82,8 @@ export default function Hero() {
               transition={{ duration: 0.95, ease }}
               className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 lg:justify-start"
             >
-              <HeroButtonPrimary href="#contact">
-                Demander un audit gratuit
+              <HeroButtonPrimary>
+                Prendre un rendez-vous
               </HeroButtonPrimary>
               <HeroButtonSecondary href="#services">
                 Voir nos services

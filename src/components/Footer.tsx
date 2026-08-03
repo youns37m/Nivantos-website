@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Mail } from "lucide-react"
+import CalendlyTrigger from "./ui/CalendlyTrigger"
 import Logo from "./ui/Logo"
 import { LinkedInIcon, XIcon, GitHubIcon } from "./ui/SocialIcons"
 import MotionReveal from "./ui/MotionReveal"
@@ -7,8 +8,8 @@ import MotionReveal from "./ui/MotionReveal"
 const links = {
   Produit: [
     { label: "Services", href: "#services" },
-    { label: "Notre méthode", href: "#processus" },
-    { label: "Témoignages", href: "#temoignages" },
+    { label: "Nos offres", href: "#offres" },
+    { label: "Notre processus", href: "#processus" },
     { label: "FAQ", href: "#faq" },
   ],
   Entreprise: [
@@ -56,15 +57,15 @@ export default function Footer() {
               <p className="max-w-md text-base text-zinc-400">
                 Découvrez comment un agent IA Nivantos peut automatiser vos tâches répétitives dès les premières semaines.
               </p>
-              <a
-                href="#contact"
+              <CalendlyTrigger
+                as="button"
                 className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_40px_rgba(124,58,237,0.3)]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 transition-all duration-500 group-hover:from-violet-500 group-hover:to-purple-500" />
                 <span className="absolute inset-0 opacity-0 blur-xl bg-violet-500 transition-opacity duration-500 group-hover:opacity-50" />
-                <span className="relative">Demander un audit gratuit</span>
+                <span className="relative">Prendre un rendez-vous</span>
                 <ArrowRight size={16} className="relative transition-transform duration-500 group-hover:translate-x-1" />
-              </a>
+              </CalendlyTrigger>
             </div>
           </div>
         </MotionReveal>

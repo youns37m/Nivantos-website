@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Calculator, Clock, Euro, TrendingUp } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
+import CalendlyTrigger from "./ui/CalendlyTrigger"
 import { premiumTransition } from "../lib/motion"
 
 const AGENT_COST = 1200
@@ -118,16 +119,14 @@ export default function ROICalculator() {
                   />
                 </div>
 
-                <motion.a
-                  href="#contact"
-                  className="btn-premium btn-premium-primary mt-6 w-full text-center"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+                <CalendlyTrigger
+                  as="button"
+                  className="btn-premium btn-premium-primary mt-6 w-full"
                 >
                   <span className="btn-premium-shimmer" aria-hidden="true" />
                   <span className="btn-premium-glow" aria-hidden="true" />
-                  <span className="btn-premium-label">Obtenir mon devis personnalisé</span>
-                </motion.a>
+                  <span className="btn-premium-label">Prendre un rendez-vous</span>
+                </CalendlyTrigger>
               </div>
             </motion.div>
           </MotionReveal>

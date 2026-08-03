@@ -5,6 +5,7 @@ import Stats from "./components/Stats"
 import AgentDemo from "./components/AgentDemo"
 import HowItWorks from "./components/HowItWorks"
 import Services from "./components/Services"
+import Pricing from "./components/Pricing"
 import UseCases from "./components/UseCases"
 import ROICalculator from "./components/ROICalculator"
 import WhyChooseUs from "./components/WhyChooseUs"
@@ -27,6 +28,7 @@ export default function App() {
         <AgentDemo />
         <HowItWorks />
         <Services />
+        <Pricing />
         <UseCases />
         <ROICalculator />
         <WhyChooseUs />

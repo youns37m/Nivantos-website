@@ -1,14 +1,15 @@
 import { ArrowRight, ChevronDown } from "lucide-react"
+import CalendlyTrigger from "../ui/CalendlyTrigger"
 
-export function HeroButtonPrimary({ href, children }: { href: string; children: React.ReactNode }) {
+export function HeroButtonPrimary({ children }: { children: React.ReactNode }) {
   return (
-    <a href={href} className="hero-btn hero-btn-primary group">
+    <CalendlyTrigger as="button" className="hero-btn hero-btn-primary group">
       <span className="hero-btn-primary-glow" aria-hidden="true" />
       <span className="hero-btn-primary-bg" aria-hidden="true" />
       <span className="hero-btn-primary-shine" aria-hidden="true" />
       <span className="hero-btn-label">{children}</span>
       <ArrowRight size={17} className="hero-btn-icon" strokeWidth={2.5} />
-    </a>
+    </CalendlyTrigger>
   )
 }
 

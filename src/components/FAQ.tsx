@@ -6,12 +6,16 @@ import { premiumTransition } from "../lib/motion"
 
 const faqs = [
   {
+    question: "Combien coûtent vos formules ?",
+    answer: "Nous proposons 3 formules : Starter à partir de 2 000 € (audit + 1 automatisation), Business à partir de 5 000 € (jusqu'à 5 agents IA + CRM), et Enterprise sur devis pour des projets sur mesure. Un audit gratuit de 30 minutes permet d'identifier la formule adaptée.",
+  },
+  {
     question: "Combien coûte un agent IA avec Nivantos ?",
-    answer: "Le tarif dépend du type d'agent et de son périmètre. Comptez entre 500 € et 2 000 €/mois pour un agent standard, ou un forfait de mise en place à partir de 3 000 €. Nous établissons un devis transparent après un audit gratuit de 30 minutes.",
+    answer: "Un agent standard coûte entre 500 € et 2 000 €/mois selon son périmètre. Les forfaits Starter et Business incluent la mise en place. Nous établissons un devis transparent après l'audit gratuit.",
   },
   {
     question: "En combien de temps mon agent est-il opérationnel ?",
-    answer: "Un agent service client ou administratif peut être déployé en 2 à 4 semaines. Un agent sur mesure avec intégrations complexes demande 4 à 6 semaines. Nous vous communiquons un calendrier précis dès l'audit.",
+    answer: "Un agent service client ou administratif est déployé en 2 à 4 semaines. La formule Business avec plusieurs agents demande 4 à 6 semaines. Un calendrier précis vous est communiqué dès l'audit.",
   },
   {
     question: "Est-ce adapté à ma TPE ou ma PME ?",
@@ -19,15 +23,35 @@ const faqs = [
   },
   {
     question: "L'agent remplace-t-il mes employés ?",
-    answer: "Non. L'agent IA prend en charge les tâches répétitives et chronophages pour libérer votre équipe sur le relationnel, la vente et la prise de décision. C'est un assistant, pas un substitut.",
+    answer: "Non. L'agent IA prend en charge les tâches répétitives pour libérer votre équipe sur le relationnel, la vente et la prise de décision. C'est un assistant intelligent, pas un substitut humain.",
+  },
+  {
+    question: "Quels outils pouvez-vous intégrer ?",
+    answer: "Nous intégrons les CRM (HubSpot, Pipedrive, Salesforce), les outils email (Gmail, Outlook), les agendas (Google Calendar, Calendly), les messageries (WhatsApp, Slack) et vos outils métier existants.",
   },
   {
     question: "Mes données clients sont-elles protégées ?",
     answer: "Oui. Hébergement en Europe, conformité RGPD, chiffrement des échanges et aucune utilisation de vos données pour entraîner des modèles tiers. Vous restez propriétaire de vos informations.",
   },
   {
+    question: "Proposez-vous un contrat ou un engagement ?",
+    answer: "Nos formules Starter et Business sont sans engagement long terme après la phase de mise en place. La formule Enterprise inclut un SLA et un accompagnement sur mesure défini contractuellement.",
+  },
+  {
     question: "Puis-je modifier ou faire évoluer mon agent ?",
-    answer: "Absolument. Votre agent évolue avec votre activité : nouveaux scénarios, intégrations supplémentaires, ajustements du ton. Un suivi mensuel est inclus dans nos formules.",
+    answer: "Absolument. Votre agent évolue avec votre activité : nouveaux scénarios, intégrations supplémentaires, ajustements du ton. L'optimisation mensuelle est incluse dans les formules Business et Enterprise.",
+  },
+  {
+    question: "Comment se déroule l'audit gratuit ?",
+    answer: "Réservez un créneau de 30 minutes via Calendly. Nous analysons vos processus, identifions les gains rapides et vous présentons la formule et le ROI estimé. Aucun engagement requis.",
+  },
+  {
+    question: "Intervenez-vous en dehors de Paris ?",
+    answer: "Oui, 100 % de notre processus peut se faire à distance. Nous accompagnons des entreprises partout en France. Des rendez-vous en présentiel sont possibles sur Paris et la région parisienne.",
+  },
+  {
+    question: "Que se passe-t-il après le déploiement ?",
+    answer: "Notre équipe assure un suivi continu : monitoring des performances, mises à jour des scénarios, support réactif sous 24h et rapports mensuels sur les gains de temps et le ROI constaté.",
   },
 ]
 
@@ -47,16 +71,12 @@ export default function FAQ() {
                 FAQ
               </div>
               <h2 className="font-display mb-5 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Questions{" "}
-                <span className="gradient-text">fréquentes</span>
+                Questions <span className="gradient-text">fréquentes</span>
               </h2>
               <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">
-                Tout ce que vous devez savoir avant de déployer votre premier agent IA avec Nivantos.
+                Retrouvez les réponses aux questions les plus courantes sur nos agents IA, nos formules et notre accompagnement.
               </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-violet-300 transition-colors duration-300 hover:text-white"
-              >
+              <a href="#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-violet-300 transition-colors duration-300 hover:text-white">
                 Une autre question ? Contactez-nous →
               </a>
             </div>
@@ -66,7 +86,7 @@ export default function FAQ() {
             {faqs.map((faq, i) => {
               const isOpen = openIndex === i
               return (
-                <MotionReveal key={faq.question} delay={i * 0.05} variant="up">
+                <MotionReveal key={faq.question} delay={i * 0.03} variant="up">
                   <motion.div
                     layout
                     className={`overflow-hidden rounded-2xl border transition-all duration-500 ${

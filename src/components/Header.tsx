@@ -1,17 +1,20 @@
 import { useEffect, useState, type MouseEvent } from "react"
-import Button from "./ui/Button"
 import Logo from "./ui/Logo"
+import CalendlyTrigger from "./ui/CalendlyTrigger"
 
 const navLinks = [
   { label: "Services", href: "#services" },
+  { label: "Offres", href: "#offres" },
   { label: "Démo", href: "#demo" },
-  { label: "Cas d'usage", href: "#cas-usage" },
   { label: "ROI", href: "#roi" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ]
 
-const sectionIds = ["services", "demo", "cas-usage", "roi", "avantages", "comment-ca-marche", "processus", "temoignages", "faq", "contact"]
+const sectionIds = [
+  "services", "offres", "demo", "cas-usage", "roi", "avantages",
+  "comment-ca-marche", "processus", "temoignages", "faq", "contact",
+]
 
 function scrollToSection(href: string) {
   const id = href.replace("#", "")
@@ -30,7 +33,6 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20)
-
       const scrollPos = window.scrollY + 120
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const el = document.getElementById(sectionIds[i])
@@ -52,11 +54,8 @@ export default function Header() {
 
   function handleNavClick(e: MouseEvent<HTMLAnchorElement>, href: string) {
     e.preventDefault()
-    if (href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } else {
-      scrollToSection(href)
-    }
+    if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" })
+    else scrollToSection(href)
     setMenuOpen(false)
   }
 
@@ -64,9 +63,7 @@ export default function Header() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-          scrolled
-            ? "border-b border-white/[0.06] bg-black/80 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-            : "bg-transparent"
+          scrolled ? "border-b border-white/[0.06] bg-black/80 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]" : "bg-transparent"
         }`}
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
       >
@@ -82,29 +79,20 @@ export default function Header() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-500 xl:px-4 ${
-                    isActive
-                      ? "text-white"
-                      : "text-zinc-400 hover:bg-white/[0.05] hover:text-white"
+                    isActive ? "text-white" : "text-zinc-400 hover:bg-white/[0.05] hover:text-white"
                   }`}
-                  style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-violet-500 to-purple-400" />
-                  )}
+                  {isActive && <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-violet-500 to-purple-400" />}
                 </a>
               )
             })}
           </nav>
 
           <div className="hidden lg:flex">
-            <Button
-              href="#contact"
-              variant="ghost"
-              onClick={(e: MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#contact")}
-            >
-              Audit gratuit
-            </Button>
+            <CalendlyTrigger as="button" className="btn-premium btn-premium-ghost">
+              Prendre un rendez-vous
+            </CalendlyTrigger>
           </div>
 
           <button
@@ -122,37 +110,19 @@ export default function Header() {
         </div>
       </header>
 
-      <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-700 lg:hidden ${
-          menuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
-      >
+      <div className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-700 lg:hidden ${menuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}>
         <div className="absolute inset-0 bg-black/92 backdrop-blur-2xl" />
         <nav className="relative flex flex-col items-center gap-1">
           {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="px-8 py-3.5 text-2xl font-semibold text-zinc-300 transition-all duration-500 hover:text-white"
-              style={{
-                fontFamily: "var(--font-display)",
-                transitionDelay: menuOpen ? `${i * 50}ms` : "0ms",
-              }}
-            >
+            <a key={link.href} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="px-8 py-3.5 text-2xl font-semibold text-zinc-300 transition-all duration-500 hover:text-white" style={{ fontFamily: "var(--font-display)", transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}>
               {link.label}
             </a>
           ))}
           <div className="mt-8">
-            <Button
-              href="#contact"
-              variant="primary"
-              icon
-              onClick={(e: MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#contact")}
-            >
-              Audit gratuit
-            </Button>
+            <CalendlyTrigger as="button" className="btn-premium btn-premium-primary px-8 py-4">
+              <span className="btn-premium-shimmer" aria-hidden="true" />
+              <span className="btn-premium-label">Prendre un rendez-vous</span>
+            </CalendlyTrigger>
           </div>
         </nav>
       </div>
