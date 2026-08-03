@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Mail } from "lucide-react"
+import Logo from "./ui/Logo"
 import { LinkedInIcon, XIcon, GitHubIcon } from "./ui/SocialIcons"
 import MotionReveal from "./ui/MotionReveal"
 
@@ -75,20 +76,13 @@ export default function Footer() {
           <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
             {/* Brand + newsletter */}
             <div className="lg:col-span-2">
-              <a href="#" className="mb-5 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 shadow-[0_0_24px_rgba(124,58,237,0.35)]">
-                  <span className="text-sm font-bold text-white">N</span>
-                </div>
-                <span className="font-display text-xl font-bold text-white">
-                  Nexus<span className="gradient-text">AI</span>
-                </span>
-              </a>
-              <p className="mb-6 max-w-xs text-sm leading-relaxed text-zinc-500">
-                Agence premium d&apos;intelligence artificielle. Nous transformons les entreprises ambitieuses grâce à l&apos;IA.
+              <Logo className="mb-5" />
+              <p className="mb-6 max-w-xs text-sm leading-relaxed text-zinc-400">
+                L&apos;intelligence artificielle au service de votre croissance. Solutions IA sur mesure pour entreprises ambitieuses.
               </p>
               <div className="flex max-w-xs items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] p-1.5 pl-4">
                 <Mail size={15} className="shrink-0 text-zinc-500" />
-                <span className="flex-1 truncate text-sm text-zinc-500">contact@nexusai.fr</span>
+                <span className="flex-1 truncate text-sm text-zinc-400">contact@nivantos.fr</span>
               </div>
               <div className="mt-5 flex gap-2">
                 {socials.map(({ label, href, icon: Icon }) => (
@@ -124,7 +118,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.05] pt-8 sm:flex-row">
             <p className="text-xs text-zinc-600">
-              &copy; {new Date().getFullYear()} NexusAI. Tous droits réservés.
+              &copy; {new Date().getFullYear()} Nivantos. Tous droits réservés.
             </p>
             <p className="text-xs text-zinc-700">
               Conçu avec passion à Paris, France

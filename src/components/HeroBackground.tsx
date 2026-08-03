@@ -180,7 +180,7 @@ export default function HeroBackground() {
       <div
         className="absolute inset-x-0 bottom-0 h-40"
         style={{
-          background: "linear-gradient(to top, var(--color-nexus-black, #020010), transparent)",
+          background: "linear-gradient(to top, var(--color-nivantos-black, #010008), transparent)",
         }}
       />
     </div>

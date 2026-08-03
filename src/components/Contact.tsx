@@ -52,8 +52,8 @@ export default function Contact() {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "contact@nexusai.fr",
-                  href: "mailto:contact@nexusai.fr",
+                  value: "contact@nivantos.fr",
+                  href: "mailto:contact@nivantos.fr",
                 },
                 {
                   icon: Phone,
@@ -122,7 +122,7 @@ export default function Contact() {
                       Message envoyé !
                     </h3>
                     <p className="max-w-sm text-zinc-400">
-                      Merci pour votre confiance. Un expert NexusAI vous
+                      Merci pour votre confiance. Un expert Nivantos vous
                       recontactera sous 24 heures.
                     </p>
                   </div>

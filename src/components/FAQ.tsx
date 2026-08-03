@@ -5,7 +5,7 @@ import MotionReveal from "./ui/MotionReveal"
 import { premiumTransition } from "../lib/motion"
 
 const faqs = [
-  { question: "Combien coûte un projet IA avec NexusAI ?", answer: "Chaque projet est unique. Nos missions démarrent à partir de 15 000 € pour un POC, et peuvent aller au-delà de 100 000 € pour des systèmes complexes. Nous proposons toujours un devis détaillé après un audit gratuit." },
+  { question: "Combien coûte un projet IA avec Nivantos ?", answer: "Chaque projet est unique. Nos missions démarrent à partir de 15 000 € pour un POC, et peuvent aller au-delà de 100 000 € pour des systèmes complexes. Nous proposons toujours un devis détaillé après un audit gratuit." },
   { question: "Quel est le délai moyen de livraison ?", answer: "Un proof of concept est livrable en 3 à 4 semaines. Un projet complet prend généralement entre 2 et 4 mois, selon la complexité et le périmètre fonctionnel." },
   { question: "Travaillez-vous avec des PME ?", answer: "Nous accompagnons des entreprises de toutes tailles — de la scale-up ambitieuse au grand groupe. Notre approche modulaire s'adapte à votre budget." },
   { question: "Mes données sont-elles sécurisées ?", answer: "Absolument. Chiffrement des données, hébergement souverain possible, conformité RGPD et audits de sécurité réguliers. Vos données ne sont jamais utilisées pour entraîner des modèles tiers." },
@@ -33,7 +33,7 @@ export default function FAQ() {
                 <span className="gradient-text">fréquentes</span>
               </h2>
               <p className="text-base leading-relaxed text-zinc-400 sm:text-lg">
-                Tout ce que vous devez savoir avant de démarrer votre projet IA avec NexusAI.
+                Tout ce que vous devez savoir avant de démarrer votre projet IA avec Nivantos.
               </p>
               <a
                 href="#contact"

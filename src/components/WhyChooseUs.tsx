@@ -73,10 +73,10 @@ export default function WhyChooseUs() {
             title={
               <>
                 Pourquoi choisir{" "}
-                <span className="gradient-text">NexusAI</span> ?
+                <span className="gradient-text">Nivantos</span> ?
               </>
             }
-            description="NexusAI combine expertise technique, vision stratégique et exécution rigoureuse pour des résultats qui dépassent vos attentes."
+            description="Nivantos combine expertise technique, vision stratégique et exécution rigoureuse pour automatiser vos processus et accélérer votre croissance."
           />
         </MotionReveal>
 

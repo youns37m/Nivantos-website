@@ -12,7 +12,7 @@ const avatarColors = [
 
 const testimonials = [
   {
-    quote: "NexusAI a transformé notre service client en 6 semaines. Notre chatbot IA traite 70 % des demandes automatiquement, avec une satisfaction client en hausse de 35 %.",
+    quote: "Nivantos a transformé notre service client en 6 semaines. Notre chatbot IA traite 70 % des demandes automatiquement, avec une satisfaction client en hausse de 35 %.",
     name: "Sophie Martin",
     role: "Directrice Digital",
     company: "TechCorp",
@@ -26,7 +26,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Un accompagnement premium du début à la fin. Architecture solide, formation de nos équipes, et un support réactif. NexusAI est notre partenaire IA de référence.",
+    quote: "Un accompagnement premium du début à la fin. Architecture solide, formation de nos équipes, et un support réactif. Nivantos est notre partenaire IA de référence.",
     name: "Camille Renard",
     role: "CTO",
     company: "InnovateLab",

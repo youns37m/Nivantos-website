@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-display: "Syne", system-ui, sans-serif;
 
-  --color-nexus-black: #020010;
-  --color-nexus-surface: #0a0118;
-  --color-nexus-purple: #7c3aed;
-  --color-nexus-violet: #a855f7;
-  --color-nexus-accent: #c084fc;
-  --color-nexus-muted: #a1a1aa;
+  --color-nivantos-black: #010008;
+  --color-nivantos-surface: #0a0118;
+  --color-nivantos-purple: #7c3aed;
+  --color-nivantos-violet: #a855f7;
+  --color-nivantos-accent: #c4b5fd;
+  --color-nivantos-muted: #9494a8;
 
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-nexus-black {
-  background-color: var(--color-nexus-black);
+.bg-nivantos-black {
+  background-color: var(--color-nivantos-black);
 }
 
 html {
@@ -25,10 +25,12 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-nexus-black);
-  color: #fff;
+  background-color: var(--color-nivantos-black);
+  color: #fafafa;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -365,11 +367,11 @@ body {
 }
 
 .btn-premium-primary:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-3px) scale(1.02);
   box-shadow:
-    0 8px 40px rgba(124, 58, 237, 0.5),
-    0 0 0 1px rgba(168, 85, 247, 0.35),
-    0 0 60px rgba(124, 58, 237, 0.25);
+    0 12px 48px rgba(124, 58, 237, 0.55),
+    0 0 0 1px rgba(168, 85, 247, 0.4),
+    0 0 80px rgba(124, 58, 237, 0.3);
 }
 
 .btn-premium-shimmer {

@@ -44,27 +44,36 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-50" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-violet-400" />
               </span>
-              Agence IA · Niveau Enterprise
+              Nivantos · Intelligence Artificielle
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.95, ease }}
-              className="font-display mb-6 text-[2.5rem] font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.5rem]"
+              className="font-display mb-5 text-[2.5rem] font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.5rem]"
             >
-              Construisez l&apos;avenir
+              L&apos;IA au service
               <br />
-              avec{" "}
-              <span className="gradient-text">l&apos;IA</span>
+              de votre{" "}
+              <span className="gradient-text">croissance</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.95, ease }}
-              className="mx-auto mb-9 max-w-lg text-base leading-[1.85] text-zinc-400 sm:mb-10 sm:text-lg lg:mx-0 lg:max-w-xl"
+              className="mx-auto mb-4 max-w-lg text-lg font-medium leading-snug text-zinc-200 sm:mb-5 sm:text-xl lg:mx-0 lg:max-w-xl"
             >
-              NexusAI conçoit des systèmes d&apos;intelligence artificielle
-              sur mesure pour les entreprises qui exigent l&apos;excellence.
+              L&apos;intelligence artificielle au service de votre croissance.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.95, ease }}
+              className="mx-auto mb-9 max-w-lg text-base leading-[1.85] text-zinc-400 sm:mb-10 sm:text-[1.05rem] lg:mx-0 lg:max-w-xl"
+            >
+              Nivantos conçoit des solutions d&apos;intelligence artificielle
+              sur mesure pour automatiser les processus, augmenter la
+              productivité et accélérer la croissance des entreprises.
             </motion.p>
 
             <motion.div

@@ -12,7 +12,7 @@ import Footer from "./components/Footer"
 
 export default function App() {
   return (
-    <div className="noise min-h-screen bg-nexus-black font-sans text-white antialiased">
+    <div className="noise min-h-screen bg-nivantos-black font-sans text-white antialiased">
       <Header />
       <main>
         <Hero />

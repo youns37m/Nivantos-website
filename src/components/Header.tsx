@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Button from "./ui/Button"
+import Logo from "./ui/Logo"
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -36,15 +37,7 @@ export default function Header() {
         style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a href="#" className="group flex items-center gap-3">
-            <div className="relative flex h-9 w-9 items-center justify-center">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 opacity-90 transition-all duration-500 group-hover:opacity-100 group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]" />
-              <span className="relative text-sm font-bold text-white">N</span>
-            </div>
-            <span className="font-display text-xl font-bold tracking-tight text-white">
-              Nexus<span className="gradient-text">AI</span>
-            </span>
-          </a>
+          <Logo />
 
           <nav className="hidden items-center gap-0.5 lg:flex">
             {navLinks.map((link) => (
