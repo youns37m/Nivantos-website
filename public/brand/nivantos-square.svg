@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="96" fill="#010008"/>
+  <rect x="1" y="1" width="510" height="510" rx="95" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <g transform="translate(176, 152)">
+    <path d="M36 92V36" stroke="#7C3AED" stroke-width="11" stroke-linecap="round"/>
+    <path d="M36 36Q64 92 92 92" stroke="#7C3AED" stroke-width="11" stroke-linecap="round"/>
+    <path d="M92 92V36" stroke="#7C3AED" stroke-width="11" stroke-linecap="round"/>
+    <circle cx="64" cy="66" r="8" fill="#7C3AED"/>
+  </g>
+  <text
+    x="256"
+    y="340"
+    text-anchor="middle"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="72"
+    font-weight="700"
+    letter-spacing="-0.04em"
+    fill="#FFFFFF"
+  >Nivantos</text>
+</svg>

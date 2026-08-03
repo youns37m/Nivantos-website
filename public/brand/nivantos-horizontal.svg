@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
+  <g transform="translate(0, 8)">
+    <path d="M9 23V9" stroke="#7C3AED" stroke-width="2.75" stroke-linecap="round"/>
+    <path d="M9 9Q16 23 23 23" stroke="#7C3AED" stroke-width="2.75" stroke-linecap="round"/>
+    <path d="M23 23V9" stroke="#7C3AED" stroke-width="2.75" stroke-linecap="round"/>
+    <circle cx="16" cy="16.5" r="2" fill="#7C3AED"/>
+  </g>
+  <text
+    x="52"
+    y="36"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="28"
+    font-weight="700"
+    letter-spacing="-0.045em"
+    fill="#FFFFFF"
+  >Nivantos</text>
+</svg>

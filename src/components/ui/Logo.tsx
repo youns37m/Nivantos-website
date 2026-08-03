@@ -1,44 +1,96 @@
 import { motion } from "framer-motion"
+import NivantosMark from "./NivantosMark"
+
+type LogoVariant = "horizontal" | "icon" | "square"
+type LogoSize = "sm" | "md" | "lg"
 
 type LogoProps = {
   href?: string
-  size?: "sm" | "md"
+  variant?: LogoVariant
+  size?: LogoSize
   showWordmark?: boolean
   className?: string
+  mono?: boolean
+}
+
+const iconSizes: Record<LogoSize, number> = {
+  sm: 28,
+  md: 32,
+  lg: 40,
+}
+
+const wordmarkSizes: Record<LogoSize, string> = {
+  sm: "text-base",
+  md: "text-xl",
+  lg: "text-2xl",
 }
 
 export default function Logo({
   href = "#",
+  variant = "horizontal",
   size = "md",
   showWordmark = true,
   className = "",
+  mono = false,
 }: LogoProps) {
-  const iconSize = size === "sm" ? "h-8 w-8" : "h-9 w-9"
-  const textSize = size === "sm" ? "text-lg" : "text-xl"
+  const markVariant = mono ? "mono" : "color"
+  const iconPx = iconSizes[size]
+  const wordmarkClass = wordmarkSizes[size]
+
+  const mark = (
+    <motion.div
+      className="relative shrink-0"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 420, damping: 24 }}
+    >
+      {variant === "square" ? (
+        <div
+          className="flex items-center justify-center rounded-xl bg-[#010008] ring-1 ring-white/[0.08] transition-all duration-500 group-hover:ring-violet-500/30 group-hover:shadow-[0_0_28px_rgba(124,58,237,0.35)]"
+          style={{ width: iconPx + 8, height: iconPx + 8 }}
+        >
+          <NivantosMark size={iconPx} variant={markVariant} />
+        </div>
+      ) : (
+        <div className="transition-all duration-500 group-hover:drop-shadow-[0_0_12px_rgba(124,58,237,0.55)]">
+          <NivantosMark size={iconPx} variant={markVariant} />
+        </div>
+      )}
+    </motion.div>
+  )
+
+  const wordmark = showWordmark && variant !== "icon" && (
+    <span
+      className={`font-display ${wordmarkClass} font-bold tracking-[-0.045em] text-white`}
+    >
+      Nivantos
+    </span>
+  )
 
   const content = (
     <>
-      <motion.div
-        className={`relative flex ${iconSize} items-center justify-center`}
-        whileHover={{ scale: 1.06 }}
-        transition={{ type: "spring", stiffness: 400, damping: 22 }}
-      >
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 opacity-95 shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-shadow duration-500 group-hover:shadow-[0_0_28px_rgba(124,58,237,0.55)]" />
-        <div className="absolute inset-[1.5px] rounded-[10px] bg-[var(--color-nivantos-black)]/50 backdrop-blur-sm" />
-        <span className="relative font-display text-sm font-extrabold tracking-tight text-white">
-          N
-        </span>
-      </motion.div>
-      {showWordmark && (
-        <span className={`font-display ${textSize} font-bold tracking-[-0.04em] text-white`}>
-          Nivan<span className="gradient-text">tos</span>
-        </span>
-      )}
+      {mark}
+      {wordmark}
     </>
   )
 
+  if (variant === "icon") {
+    return (
+      <a
+        href={href}
+        className={`group inline-flex ${className}`}
+        aria-label="Nivantos — Accueil"
+      >
+        {mark}
+      </a>
+    )
+  }
+
   return (
-    <a href={href} className={`group flex items-center gap-3 ${className}`} aria-label="Nivantos — Accueil">
+    <a
+      href={href}
+      className={`group inline-flex items-center gap-2.5 ${className}`}
+      aria-label="Nivantos — Accueil"
+    >
       {content}
     </a>
   )
