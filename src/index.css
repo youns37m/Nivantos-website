@@ -596,3 +596,56 @@ body {
     animation: none;
   }
 }
+
+/* ── ROI slider ── */
+.roi-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #7c3aed var(--slider-progress, 50%),
+    rgba(255, 255, 255, 0.08) var(--slider-progress, 50%)
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.roi-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.roi-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.7);
+}
+
+.roi-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.5);
+  cursor: pointer;
+}
+
+/* ── Glow pulse utility ── */
+.glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
