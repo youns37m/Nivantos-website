@@ -110,7 +110,7 @@ export default function Hero() {
             animate="visible"
             variants={fadeRight}
             transition={{ duration: 0.9, ease, delay: 0.12 }}
-            className="relative hidden md:block lg:-mr-4 xl:-mr-8"
+            className="relative md:block lg:-mr-2 xl:-mr-4"
           >
             <HeroVisual />
           </motion.div>
