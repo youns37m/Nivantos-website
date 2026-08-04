@@ -54,11 +54,14 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "border-b border-white/[0.06] bg-black/85 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.35)]" : "bg-transparent"
+        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-700 ${
+          scrolled
+            ? "header-scrolled border-b border-white/[0.08] bg-[#010008]/65 shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_12px_48px_-16px_rgba(0,0,0,0.55)] backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-[#010008]/50"
+            : "border-b border-transparent bg-transparent shadow-none"
         }`}
+        style={{ transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
           <Logo href="#" />
 
           <nav className="hidden items-center gap-0.5 lg:flex">
