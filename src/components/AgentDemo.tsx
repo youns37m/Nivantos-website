@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Bot, Send, Sparkles } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
+import { CTAPrimary } from "./ui/CTA"
 import { premiumTransition } from "../lib/motion"
 
 type Message = { role: "user" | "agent"; text: string }
@@ -36,7 +37,7 @@ export default function AgentDemo() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "agent",
-      text: "Bonjour ! Je suis un agent IA Nivantos. Essayez de me poser une question 👇",
+      text: "Bonjour. Je suis un agent IA Nivantos — posez-moi une question ou choisissez une suggestion ci-dessous.",
     },
   ])
   const [input, setInput] = useState("")
@@ -79,7 +80,7 @@ export default function AgentDemo() {
           <SectionHeading
             label="Démonstration"
             title={<>Testez un agent IA <span className="gradient-text">en direct</span></>}
-            description="Découvrez comment un agent Nivantos répond à vos clients — instantanément, 24h/24."
+            description="Interagissez avec un agent en conditions réelles. Réponses instantanées, 24h/24."
           />
         </MotionReveal>
 
@@ -189,6 +190,16 @@ export default function AgentDemo() {
               </motion.button>
             </form>
           </motion.div>
+        </MotionReveal>
+
+        <MotionReveal variant="up" delay={0.15}>
+          <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.02] px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div>
+              <p className="font-display text-lg font-bold text-white">Convaincu par la démo ?</p>
+              <p className="mt-1 text-sm text-zinc-400">Planifiez un audit gratuit de 30 minutes avec un expert.</p>
+            </div>
+            <CTAPrimary className="shrink-0" />
+          </div>
         </MotionReveal>
       </div>
     </section>

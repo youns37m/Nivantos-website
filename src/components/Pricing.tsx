@@ -1,9 +1,15 @@
 import { motion } from "framer-motion"
-import { Check, ArrowRight } from "lucide-react"
+import { Check, Sparkles } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
-import CalendlyTrigger from "./ui/CalendlyTrigger"
+import { CTAPrimary } from "./ui/CTA"
 import { premiumTransition } from "../lib/motion"
+
+const includedInAll = [
+  "Audit personnalisé",
+  "Estimation du ROI",
+  "Aucun engagement",
+]
 
 const plans = [
   {
@@ -13,7 +19,6 @@ const plans = [
     description: "Idéal pour débuter avec l'IA et automatiser une première tâche clé.",
     features: ["Audit IA complet", "1 automatisation", "Support email", "Formation initiale", "Mise en service en 2 semaines"],
     highlighted: false,
-    cta: "Choisir Starter",
   },
   {
     name: "Business",
@@ -22,7 +27,6 @@ const plans = [
     description: "La formule la plus populaire pour les PME qui veulent scaler leurs agents IA.",
     features: ["Jusqu'à 5 agents IA", "Intégration CRM", "Automatisations avancées", "Support prioritaire", "Optimisation mensuelle"],
     highlighted: true,
-    cta: "Choisir Business",
   },
   {
     name: "Enterprise",
@@ -31,7 +35,6 @@ const plans = [
     description: "Pour les entreprises avec des besoins complexes et des intégrations sur mesure.",
     features: ["IA 100% sur mesure", "Intégrations complètes", "Support prioritaire 24/7", "Chef de projet dédié", "SLA garanti"],
     highlighted: false,
-    cta: "Nous contacter",
   },
 ]
 
@@ -46,8 +49,18 @@ export default function Pricing() {
           <SectionHeading
             label="Nos offres"
             title={<>Des formules <span className="gradient-text">adaptées</span> à votre ambition</>}
-            description="Des tarifs transparents pour chaque étape de votre transformation IA. Audit gratuit avant tout engagement."
+            description="Frais de mise en place transparents. Maintenance et optimisation à partir de 500 €/mois selon le périmètre."
           />
+        </MotionReveal>
+
+        <MotionReveal variant="up" delay={0.05}>
+          <div className="mx-auto mb-12 flex max-w-2xl items-center justify-center gap-3 rounded-2xl border border-violet-500/20 bg-violet-500/[0.06] px-5 py-4 text-center sm:mb-14 sm:px-6">
+            <Sparkles size={18} className="shrink-0 text-violet-400" strokeWidth={1.5} />
+            <p className="text-sm font-medium text-violet-100 sm:text-base">
+              Toutes nos offres commencent par un{" "}
+              <span className="font-semibold text-white">audit gratuit de 30 minutes</span>.
+            </p>
+          </div>
         </MotionReveal>
 
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
@@ -67,7 +80,7 @@ export default function Pricing() {
                 )}
                 {plan.highlighted && (
                   <span className="mb-4 inline-flex w-fit rounded-full bg-violet-500/20 px-3 py-1 text-xs font-semibold text-violet-200">
-                    Le plus populaire
+                    Le plus choisi
                   </span>
                 )}
 
@@ -79,9 +92,12 @@ export default function Pricing() {
                     <span className="text-xs font-medium uppercase tracking-wider text-zinc-500">{plan.priceNote}</span>
                   )}
                   <div className="font-display text-4xl font-bold text-white">{plan.price}</div>
+                  {plan.priceNote && (
+                    <p className="mt-1 text-xs text-zinc-500">Frais de mise en place · maintenance dès 500 €/mois</p>
+                  )}
                 </div>
 
-                <ul className="mb-8 flex-1 space-y-3">
+                <ul className="mb-6 flex-1 space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5 text-sm text-zinc-300">
                       <Check size={16} className="mt-0.5 shrink-0 text-violet-400" strokeWidth={2.5} />
@@ -90,25 +106,16 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                {plan.name === "Enterprise" ? (
-                  <a
-                    href="#contact"
-                    className={`btn-premium w-full text-center ${plan.highlighted ? "btn-premium-primary" : "btn-premium-secondary"}`}
-                  >
-                    {plan.highlighted && <span className="btn-premium-shimmer" aria-hidden="true" />}
-                    <span className="btn-premium-label">{plan.cta}</span>
-                  </a>
-                ) : (
-                  <CalendlyTrigger
-                    as="button"
-                    className={`btn-premium w-full ${plan.highlighted ? "btn-premium-primary" : "btn-premium-secondary"}`}
-                  >
-                    {plan.highlighted && <span className="btn-premium-shimmer" aria-hidden="true" />}
-                    {plan.highlighted && <span className="btn-premium-glow" aria-hidden="true" />}
-                    <span className="btn-premium-label">{plan.cta}</span>
-                    <ArrowRight size={16} className="btn-premium-icon relative shrink-0" />
-                  </CalendlyTrigger>
-                )}
+                <ul className="mb-8 space-y-2.5 border-t border-white/[0.06] pt-6">
+                  {includedInAll.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-zinc-400">
+                      <Check size={14} className="shrink-0 text-emerald-400/90" strokeWidth={2.5} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <CTAPrimary block />
               </motion.div>
             </MotionReveal>
           ))}

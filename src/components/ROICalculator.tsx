@@ -3,10 +3,10 @@ import { motion } from "framer-motion"
 import { Calculator, Clock, Euro, TrendingUp } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
-import CalendlyTrigger from "./ui/CalendlyTrigger"
+import { CTAPrimary } from "./ui/CTA"
 import { premiumTransition } from "../lib/motion"
 
-const AGENT_COST = 1200
+const AGENT_COST = 800
 
 export default function ROICalculator() {
   const [hoursPerWeek, setHoursPerWeek] = useState(12)
@@ -88,7 +88,7 @@ export default function ROICalculator() {
             >
               <div className="flex h-full flex-col rounded-2xl bg-gradient-to-br from-violet-600/15 via-purple-900/10 to-transparent p-6 sm:p-8">
                 <p className="mb-6 text-sm text-zinc-400">
-                  Basé sur un agent Nivantos à ~{AGENT_COST.toLocaleString("fr-FR")} €/mois
+                  Basé sur un agent Nivantos à ~{AGENT_COST.toLocaleString("fr-FR")} €/mois (maintenance, hors mise en place)
                 </p>
 
                 <div className="grid flex-1 gap-4 sm:grid-cols-2">
@@ -119,14 +119,7 @@ export default function ROICalculator() {
                   />
                 </div>
 
-                <CalendlyTrigger
-                  as="button"
-                  className="btn-premium btn-premium-primary mt-6 w-full"
-                >
-                  <span className="btn-premium-shimmer" aria-hidden="true" />
-                  <span className="btn-premium-glow" aria-hidden="true" />
-                  <span className="btn-premium-label">Prendre un rendez-vous</span>
-                </CalendlyTrigger>
+                <CTAPrimary block className="mt-6" />
               </div>
             </motion.div>
           </MotionReveal>

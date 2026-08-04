@@ -1,103 +1,116 @@
 import { motion } from "framer-motion"
+import { Check } from "lucide-react"
 import HeroBackground from "./HeroBackground"
 import HeroVisual from "./hero/HeroVisual"
-import { HeroButtonPrimary, HeroButtonSecondary } from "./hero/HeroButtons"
+import { CTAPrimary, CTASecondary } from "./ui/CTA"
 import "./hero/hero.css"
 
 const ease = [0.16, 1, 0.3, 1] as const
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 56, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 32, filter: "blur(6px)" },
   visible: { opacity: 1, y: 0, filter: "blur(0px)" },
 }
 
 const fadeRight = {
-  hidden: { opacity: 0, x: 80, filter: "blur(8px)" },
+  hidden: { opacity: 0, x: 40, filter: "blur(6px)" },
   visible: { opacity: 1, x: 0, filter: "blur(0px)" },
 }
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
 }
+
+const trustPoints = [
+  "Audit gratuit · 30 minutes",
+  "Premier agent en 2 à 4 semaines",
+  "Intégré à vos outils existants",
+]
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20">
+    <section className="relative min-h-[92svh] overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-14 lg:min-h-[88svh] lg:pt-32 lg:pb-16">
       <HeroBackground />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* Asymmetric grid — content 55%, visual 45% offset right */}
-        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-6 xl:grid-cols-[1.2fr_0.8fr] xl:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 xl:gap-14">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={container}
-            className="relative z-10 text-center lg:pr-4 lg:text-left xl:pr-8"
+            className="relative z-10 text-center lg:pr-2 lg:text-left"
           >
-            <motion.div
+            <motion.p
               variants={fadeUp}
-              transition={{ duration: 0.95, ease }}
-              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-violet-400/20 bg-violet-500/[0.08] px-4 py-2 text-xs tracking-wide text-violet-200 backdrop-blur-xl sm:mb-8 sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
+              transition={{ duration: 0.7, ease }}
+              className="mb-5 text-sm font-medium text-violet-300/90 sm:mb-6"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-50" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-violet-400" />
-              </span>
-              Nivantos · Agents IA pour PME & TPE
-            </motion.div>
+              Agents IA sur mesure pour dirigeants de PME & TPE
+            </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              transition={{ duration: 0.95, ease }}
-              className="font-display mb-5 text-[2.5rem] font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.5rem]"
+              transition={{ duration: 0.7, ease }}
+              className="font-display mx-auto mb-5 max-w-2xl text-[1.85rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-white sm:text-4xl sm:leading-[1.06] md:text-[2.65rem] lg:mx-0 lg:max-w-none xl:text-[3rem]"
             >
-              L&apos;IA qui travaille
-              <br />
-              pendant que vous{" "}
-              <span className="gradient-text">développez</span>
+              Automatisez jusqu&apos;à{" "}
+              <span className="gradient-text">70&nbsp;%</span> de vos tâches
+              administratives avec des agents IA sur mesure.
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              transition={{ duration: 0.95, ease }}
-              className="mx-auto mb-4 max-w-lg text-lg font-medium leading-snug text-zinc-200 sm:mb-5 sm:text-xl lg:mx-0 lg:max-w-xl"
+              transition={{ duration: 0.7, ease }}
+              className="mx-auto mb-6 max-w-xl text-[0.9375rem] leading-[1.7] text-zinc-300 sm:text-base lg:mx-0 lg:max-w-[32rem]"
             >
-              L&apos;IA qui travaille pendant que vous développez votre entreprise.
+              Service client, relances commerciales, administratif — vos agents travaillent
+              pendant que vous développez votre activité.
             </motion.p>
 
-            <motion.p
+            <motion.ul
               variants={fadeUp}
-              transition={{ duration: 0.95, ease }}
-              className="mx-auto mb-9 max-w-lg text-base leading-[1.85] text-zinc-400 sm:mb-10 sm:text-[1.05rem] lg:mx-0 lg:max-w-xl"
+              transition={{ duration: 0.7, ease }}
+              className="mx-auto mb-8 flex max-w-md flex-col gap-2 sm:mb-9 lg:mx-0"
             >
-              Nivantos aide les PME et TPE à automatiser leurs tâches grâce à des
-              agents IA sur mesure. Assistants intelligents pour répondre aux clients,
-              gérer les rendez-vous, automatiser les relances, traiter les emails
-              et optimiser vos processus internes.
-            </motion.p>
+              {trustPoints.map((point) => (
+                <li key={point} className="flex items-center gap-2.5 text-left text-sm text-zinc-300">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-500/15 ring-1 ring-violet-500/25">
+                    <Check size={11} className="text-violet-300" strokeWidth={3} />
+                  </span>
+                  {point}
+                </li>
+              ))}
+            </motion.ul>
 
             <motion.div
               variants={fadeUp}
-              transition={{ duration: 0.95, ease }}
-              className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 lg:justify-start"
+              transition={{ duration: 0.7, ease }}
+              className="flex flex-col items-center gap-3 sm:flex-row sm:gap-3.5 lg:justify-start"
             >
-              <HeroButtonPrimary>
-                Prendre un rendez-vous
-              </HeroButtonPrimary>
-              <HeroButtonSecondary href="#services">
-                Voir nos services
-              </HeroButtonSecondary>
+              <CTAPrimary />
+              <CTASecondary />
             </motion.div>
+
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.7, ease }}
+              className="mx-auto mt-5 max-w-md text-xs leading-relaxed text-zinc-500 lg:mx-0"
+            >
+              * Estimation basée sur nos déploiements PME — calculez votre ROI dans la{" "}
+              <a href="#roi" className="text-violet-300 underline underline-offset-2 hover:text-violet-200">
+                section dédiée
+              </a>
+              .
+            </motion.p>
           </motion.div>
 
-          {/* Visual — bleeds right on large screens */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeRight}
-            transition={{ duration: 1.15, ease, delay: 0.2 }}
-            className="relative lg:-mr-8 xl:-mr-16"
+            transition={{ duration: 0.9, ease, delay: 0.12 }}
+            className="relative hidden md:block lg:-mr-4 xl:-mr-8"
           >
             <HeroVisual />
           </motion.div>

@@ -1,36 +1,30 @@
 import { motion } from "framer-motion"
-import { Star, Quote } from "lucide-react"
+import { Quote } from "lucide-react"
 import SectionHeading from "./ui/SectionHeading"
 import MotionReveal from "./ui/MotionReveal"
 import { premiumTransition } from "../lib/motion"
 
-const avatarColors = [
-  "from-violet-500 to-purple-700",
-  "from-purple-500 to-fuchsia-700",
-  "from-indigo-500 to-violet-700",
-]
-
 const testimonials = [
   {
-    quote: "Notre agent service client répond aux demandes en dehors des horaires de bureau. On a réduit le temps passé au téléphone de moitié, sans embaucher.",
-    name: "Marie L.",
+    quote:
+      "En trois semaines, notre agent a pris en charge 80 % des demandes récurrentes. Je retrouve enfin du temps pour développer mon activité.",
+    name: "Sophie M.",
     role: "Gérante",
     company: "Cabinet comptable · Lyon",
-    rating: 5,
   },
   {
-    quote: "L'agent commercial relance nos prospects automatiquement. On a signé 3 contrats supplémentaires le premier mois, juste grâce aux relances qu'on n'avait plus le temps de faire.",
-    name: "Julien M.",
-    role: "Directeur",
-    company: "Agence immobilière · Bordeaux",
-    rating: 5,
+    quote:
+      "Les relances prospects se font toutes seules. On a signé 3 contrats supplémentaires le premier mois, sans recruter.",
+    name: "Karim B.",
+    role: "Directeur commercial",
+    company: "Agence immobilière · Paris",
   },
   {
-    quote: "Les devis et emails récurrents sont gérés par l'agent administratif. Je récupère facilement 2 demi-journées par semaine pour me concentrer sur mes clients.",
-    name: "Sophie R.",
+    quote:
+      "L'équipe Nivantos a compris nos contraintes de PME dès le premier appel. Déploiement simple, résultats visibles rapidement.",
+    name: "Claire D.",
     role: "Fondatrice",
-    company: "Boutique en ligne · Nantes",
-    rating: 5,
+    company: "E-commerce B2B · Bordeaux",
   },
 ]
 
@@ -38,50 +32,35 @@ export default function Testimonials() {
   return (
     <section id="temoignages" className="section-padding relative px-5 sm:px-6 lg:px-8">
       <div className="section-divider absolute inset-x-0 top-0" />
-      <div className="light-orb" style={{ right: "-5%", bottom: "10%", width: 480, height: 480, background: "rgba(147,51,234,0.08)" }} />
 
       <div className="relative mx-auto max-w-7xl">
         <MotionReveal variant="blur">
           <SectionHeading
-            label="Témoignages"
-            title={<>Ce que disent <span className="gradient-text">nos clients</span></>}
-            description="Des dirigeants de PME et TPE qui ont automatisé leur quotidien avec Nivantos."
+            label="Ils nous font confiance"
+            title={<>Ce que disent les <span className="gradient-text">dirigeants</span></>}
+            description="Retours anonymisés de dirigeants de PME accompagnés par Nivantos."
+            compact
           />
         </MotionReveal>
 
-        <div className="grid gap-5 sm:gap-6 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3 lg:gap-6">
           {testimonials.map((item, i) => (
-            <MotionReveal key={item.name} delay={i * 0.1} variant="up">
-              <motion.div
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-6 backdrop-blur-xl sm:p-7"
-                whileHover={{ y: -8 }}
+            <MotionReveal key={item.name} delay={i * 0.08} variant="up">
+              <motion.blockquote
+                className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6"
+                whileHover={{ y: -4 }}
                 transition={premiumTransition}
               >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                <Quote size={28} className="mb-4 text-violet-500/25 group-hover:text-violet-400/40" strokeWidth={1.5} />
-
-                <div className="mb-4 flex gap-0.5">
-                  {Array.from({ length: item.rating }).map((_, j) => (
-                    <Star key={j} size={13} className="fill-violet-400 text-violet-400" strokeWidth={0} />
-                  ))}
-                </div>
-
-                <blockquote className="mb-6 flex-1 text-sm leading-[1.8] text-zinc-300 sm:text-[0.95rem]">
-                  &ldquo;{item.quote}&rdquo;
-                </blockquote>
-
-                <div className="flex items-center gap-3.5 border-t border-white/[0.06] pt-5">
-                  <div className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${avatarColors[i]} text-sm font-bold text-white shadow-[0_0_24px_rgba(124,58,237,0.25)]`}>
-                    {item.name.split(" ").map((n) => n[0]).join("")}
-                    <div className="absolute inset-0 rounded-full ring-2 ring-white/10" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">{item.name}</div>
-                    <div className="text-xs text-zinc-500">{item.role} · {item.company}</div>
-                  </div>
-                </div>
-              </motion.div>
+                <Quote size={20} className="mb-4 text-violet-400/70" strokeWidth={1.5} />
+                <p className="mb-6 flex-1 text-sm leading-[1.75] text-zinc-300">&ldquo;{item.quote}&rdquo;</p>
+                <footer className="border-t border-white/[0.06] pt-4">
+                  <cite className="not-italic">
+                    <span className="block text-sm font-semibold text-white">{item.name}</span>
+                    <span className="block text-xs text-zinc-500">{item.role}</span>
+                    <span className="block text-xs text-zinc-600">{item.company}</span>
+                  </cite>
+                </footer>
+              </motion.blockquote>
             </MotionReveal>
           ))}
         </div>
