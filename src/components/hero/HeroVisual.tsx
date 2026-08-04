@@ -54,7 +54,7 @@ export default function HeroVisual() {
       initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className="relative mx-auto w-full max-w-[440px] lg:max-w-none"
+      className="relative mx-auto w-full max-w-[min(100%,500px)] sm:max-w-[520px] lg:max-w-[560px] xl:max-w-[600px]"
     >
       <div className="gradient-border relative w-full rounded-3xl">
         <div className="relative overflow-hidden rounded-3xl glass-strong p-6 md:p-8">
@@ -73,7 +73,7 @@ export default function HeroVisual() {
           </div>
 
           {/* Orbital scene — contained square, nothing clipped */}
-          <div className="relative z-10 mx-auto w-full max-w-[300px] sm:max-w-[320px] lg:max-w-[340px]">
+          <div className="relative z-10 mx-auto w-full max-w-[min(100%,336px)] sm:max-w-[360px] md:max-w-[380px] lg:max-w-[400px] xl:max-w-[424px]">
             <div className="hero-visual-scene relative aspect-square w-full [container-type:size]">
               <svg
                 className="absolute inset-0 h-full w-full"
