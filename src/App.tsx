@@ -11,7 +11,7 @@ import Testimonials from "./components/Testimonials"
 import WhyChooseUs from "./components/WhyChooseUs"
 import Process from "./components/Process"
 import AutomationExamples from "./components/AutomationExamples"
-import Founder from "./components/Founder"
+import AboutNivantos from "./components/AboutNivantos"
 import FAQ from "./components/FAQ"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -35,7 +35,7 @@ export default function App() {
         <WhyChooseUs />
         <Process />
         <AutomationExamples />
-        <Founder />
+        <AboutNivantos />
         <FAQ />
         <Contact />
       </main>

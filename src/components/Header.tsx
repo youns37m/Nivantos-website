@@ -14,7 +14,7 @@ const navLinks = [
 
 const sectionIds = [
   "services", "demonstrations", "demo", "offres", "roi", "avantages",
-  "processus", "exemples", "fondateur", "faq", "contact",
+  "processus", "exemples", "a-propos", "faq", "contact",
 ]
 
 export default function Header() {

@@ -30,6 +30,7 @@ export const footerNav = {
     { label: "Calculateur ROI", href: "/#roi" },
   ],
   entreprise: [
+    { label: "À propos", href: "/#a-propos" },
     { label: "Processus", href: "/#processus" },
     { label: "Cas clients", href: "/#exemples" },
     { label: "FAQ", href: "/#faq" },
