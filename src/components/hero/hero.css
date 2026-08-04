@@ -152,6 +152,11 @@
 .hero-visual-scene {
   perspective: 900px;
   transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+.hero-visual-scene .hero-visual-ring {
+  transform-origin: center center;
 }
 
 .hero-visual-core {
