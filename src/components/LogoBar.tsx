@@ -17,8 +17,8 @@ export default function LogoBar() {
   return (
     <section className="relative border-y border-white/[0.05] bg-white/[0.01] py-8 backdrop-blur-sm sm:py-10">
       <div className="mx-auto mb-5 max-w-7xl px-5 text-center sm:px-6">
-        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-zinc-600 sm:text-xs">
-          Nous accompagnons tous les secteurs
+        <p className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-zinc-500 sm:text-xs">
+          Secteurs accompagnés
         </p>
       </div>
 

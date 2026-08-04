@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a0533"/>
+      <stop offset="0.5" stop-color="#2d1b69"/>
+      <stop offset="1" stop-color="#0a0118"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="300" y1="0" x2="300" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c3aed" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="face" cx="0" cy="0" r="1" gradientTransform="matrix(0 180 -180 0 300 320)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="720" rx="32" fill="url(#bg)"/>
+  <rect width="600" height="720" rx="32" fill="url(#glow)"/>
+  <circle cx="300" cy="320" r="140" fill="url(#face)"/>
+  <text x="300" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="96" font-weight="700" fill="rgba(255,255,255,0.9)">YM</text>
+  <text x="300" y="580" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="600" fill="rgba(196,181,253,0.9)">Younes Mahdjoub</text>
+  <text x="300" y="612" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="rgba(161,161,170,0.8)">Fondateur · Nivantos</text>
+</svg>

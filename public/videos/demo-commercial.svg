@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0118"/>
+      <stop offset="1" stop-color="#1a1530"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 180) rotate(90) scale(200 360)">
+      <stop stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+  <circle cx="320" cy="150" r="48" fill="#6366f1" fill-opacity="0.2" stroke="#818cf8" stroke-opacity="0.4"/>
+  <path d="M308 128v44l36-22-36-22z" fill="#c7d2fe"/>
+  <text x="320" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.92)">Agent Commercial</text>
+  <text x="320" y="278" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="rgba(161,161,170,0.9)">Prospection &amp; relances</text>
+</svg>

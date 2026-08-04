@@ -2,15 +2,16 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import LogoBar from "./components/LogoBar"
 import Stats from "./components/Stats"
-import AgentDemo from "./components/AgentDemo"
-import HowItWorks from "./components/HowItWorks"
 import Services from "./components/Services"
+import Demonstrations from "./components/Demonstrations"
+import AgentDemo from "./components/AgentDemo"
 import Pricing from "./components/Pricing"
-import UseCases from "./components/UseCases"
 import ROICalculator from "./components/ROICalculator"
+import Testimonials from "./components/Testimonials"
 import WhyChooseUs from "./components/WhyChooseUs"
 import Process from "./components/Process"
-import Testimonials from "./components/Testimonials"
+import AutomationExamples from "./components/AutomationExamples"
+import Founder from "./components/Founder"
 import FAQ from "./components/FAQ"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -23,17 +24,18 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <LogoBar />
         <Stats />
-        <AgentDemo />
-        <HowItWorks />
+        <LogoBar />
         <Services />
+        <Demonstrations />
+        <AgentDemo />
         <Pricing />
-        <UseCases />
         <ROICalculator />
+        <Testimonials />
         <WhyChooseUs />
         <Process />
-        <Testimonials />
+        <AutomationExamples />
+        <Founder />
         <FAQ />
         <Contact />
       </main>

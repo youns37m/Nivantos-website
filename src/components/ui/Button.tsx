@@ -1,63 +1,36 @@
-import type { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react"
-import { ArrowRight } from "lucide-react"
+import type { ButtonHTMLAttributes } from "react"
+import { CTAPrimary, CTASecondary, CTAPrimarySubmit } from "./CTA"
 
-type ButtonVariant = "primary" | "secondary" | "ghost"
+type ButtonVariant = "primary" | "secondary"
 
 type BaseProps = {
   variant?: ButtonVariant
-  children: ReactNode
   className?: string
-  icon?: boolean
+  block?: boolean
 }
 
 type ButtonProps = BaseProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & { href?: never }
-
-type LinkProps = BaseProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
-
-const variants: Record<ButtonVariant, string> = {
-  primary: "btn-premium btn-premium-primary",
-  secondary: "btn-premium btn-premium-secondary",
-  ghost: "btn-premium btn-premium-ghost",
-}
-
-export default function Button({
-  variant = "primary",
-  children,
-  className = "",
-  icon = false,
-  href,
-  ...props
-}: ButtonProps | LinkProps) {
-  const classes = `${variants[variant]} ${className}`
-
-  const content = (
-    <>
-      {variant === "primary" && <span className="btn-premium-shimmer" aria-hidden="true" />}
-      {variant === "primary" && <span className="btn-premium-glow" aria-hidden="true" />}
-      <span className="btn-premium-label">{children}</span>
-      {icon && (
-        <ArrowRight
-          size={16}
-          className="btn-premium-icon relative shrink-0"
-          strokeWidth={2}
-        />
-      )}
-    </>
-  )
-
-  if (href) {
-    return (
-      <a href={href} className={classes} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
-        {content}
-      </a>
-    )
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: never
+    loading?: boolean
   }
 
-  return (
-    <button className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
-      {content}
-    </button>
-  )
+/** @deprecated Prefer CTAPrimary, CTASecondary or CTAPrimarySubmit directly. */
+export default function Button({
+  variant = "primary",
+  className = "",
+  block,
+  loading,
+  type,
+  ...props
+}: ButtonProps) {
+  if (variant === "secondary") {
+    return <CTASecondary className={className} block={block} />
+  }
+
+  if (type === "submit") {
+    return <CTAPrimarySubmit className={className} block={block} loading={loading} {...props} />
+  }
+
+  return <CTAPrimary className={className} block={block} />
 }
